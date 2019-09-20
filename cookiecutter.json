@@ -1,0 +1,10 @@
+{
+    "project_name": "hello_world",
+    "project_summary": "Hello World!",
+    "project_version": "0.1.0",
+
+    "author": "Pablo Castellazzi",
+    "author_email": "pablo.castellazzi@icloud.com",
+    "homepage": "https://github.com/pcastellazzi/{{ cookiecutter.project_name }}/",
+    "documentation": "https://pcastellazzi.github.io/{{ cookiecutter.project_name }}/"
+}
