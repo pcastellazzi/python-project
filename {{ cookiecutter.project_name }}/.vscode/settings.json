@@ -1,0 +1,25 @@
+{
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "${env:HOME}/.poetry/bin/poetry",
+    "python.formatting.blackArgs": ["run", "black"],
+
+    "python.linting.banditEnabled": true,
+    "python.linting.banditPath": "${env:HOME}/.poetry/bin/poetry",
+    "python.linting.banditArgs": ["run", "bandit", "--skip", "B101"],
+
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "${env:HOME}/.poetry/bin/poetry",
+    "python.linting.flake8Args": ["run", "flake8"],
+
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": "${env:HOME}/.poetry/bin/poetry",
+    "python.linting.mypyArgs": ["run", "mypy", "--strict"],
+
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "${env:HOME}/.poetry/bin/poetry",
+    "python.linting.pylintArgs": ["run", "pylint"],
+
+    "[python]": {
+        "editor.formatOnSave": true,
+    },
+}
