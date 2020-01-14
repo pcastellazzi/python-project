@@ -1,4 +1,5 @@
-.PHONY: all check-code-format check-code-quality check-dependencies update-docs test
+MAKEFLAGS += --warn-undefined-variables
+MAKEFLAGS += --no-builtin-rules
 
 PYTHON_CODE = {{ cookiecutter.project_name }} tests/
 PYTEST_FLAGS = --quiet --cov={{ cookiecutter.project_name }} --cov-fail-under=100 --cov-report=html tests/
@@ -26,3 +27,5 @@ update-docs:
 	poetry run pdoc3 --html --output-dir docs {{ cookiecutter.project_name }}
 	mv docs/{{ cookiecutter.project_name }}/* docs/
 	rmdir docs/{{ cookiecutter.project_name }}/
+
+.PHONY: all check-code-format check-code-quality check-dependencies update-docs test

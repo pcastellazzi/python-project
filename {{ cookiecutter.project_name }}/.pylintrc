@@ -1,5 +1,6 @@
 [MASTER]
 disable =
+  bad-continuation,
   missing-docstring
 
 [REPORTS]
