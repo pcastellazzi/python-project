@@ -1,8 +1,8 @@
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-PYTHON_CODE = {{ cookiecutter.project_name }} tests/
-PYTEST_FLAGS = --quiet --cov={{ cookiecutter.project_name }} --cov-fail-under=100 --cov-report=html tests/
+PYTHON_CODE = {{ cookiecutter.module }}/ tests/
+PYTEST_FLAGS = --quiet --cov={{ cookiecutter.module }} --cov-fail-under=100 --cov-report=html tests/
 
 all: test check-code-format check-code-quality check-dependencies update-docs
 
@@ -23,9 +23,9 @@ check-dependencies:
 	poetry run safety check
 
 update-docs:
-	rm -rf docs/*.html docs/{{ cookiecutter.project_name }}/
-	poetry run pdoc3 --html --output-dir docs {{ cookiecutter.project_name }}
-	mv docs/{{ cookiecutter.project_name }}/* docs/
-	rmdir docs/{{ cookiecutter.project_name }}/
+	rm -rf docs/*.html docs/{{ cookiecutter.module }}/
+	poetry run pdoc3 --html --output-dir docs {{ cookiecutter.module }}
+	mv docs/{{ cookiecutter.module }}/* docs/
+	rmdir docs/{{ cookiecutter.module }}/
 
 .PHONY: all check-code-format check-code-quality check-dependencies update-docs test

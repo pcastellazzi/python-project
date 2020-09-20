@@ -1,5 +1,5 @@
-import {{ cookiecutter.project_name }}
+import {{ cookiecutter.module }}
 
 
 def test_true() -> None:
-    assert {{ cookiecutter.project_name }}.__version__ == "{{ cookiecutter.project_version }}"
+    assert {{ cookiecutter.module }}.__version__ == "{{ cookiecutter.project_version }}"

@@ -6,5 +6,6 @@
     "author": "Pablo Castellazzi",
     "author_email": "pablo.castellazzi@icloud.com",
     "homepage": "https://github.com/pcastellazzi/{{ cookiecutter.project_name }}/",
-    "documentation": "https://pcastellazzi.github.io/{{ cookiecutter.project_name }}/"
+    "documentation": "https://pcastellazzi.github.io/{{ cookiecutter.project_name }}/",
+    "module": "{{ cookiecutter.project_name.lower().replace('-', '_') }}"
 }
