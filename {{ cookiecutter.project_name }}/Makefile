@@ -28,10 +28,10 @@ test:
 	poetry run py.test $(PYTEST_FLAGS)
 
 update-docs:
-	rm -rf docs/*.html docs/tauon/
-	poetry run pdoc3 --html --output-dir docs tauon
-	mv docs/tauon/* docs/
-	rmdir docs/tauon/
+	rm -rf docs/*.html docs/{{ cookiecutter.module }}/
+	poetry run pdoc3 --html --output-dir docs {{ cookiecutter.module }}
+	mv docs/{{ cookiecutter.module }}/* docs/
+	rmdir docs/{{ cookiecutter.module }}/
 
 .PHONY: all install test \
 	check check-code-format check-code-quality check-dependencies \
