@@ -2,7 +2,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-poetry update
 make
 
 if [[ ! -d .git ]]; then

@@ -16,8 +16,6 @@ Tools
     * https://pypi.org/project/flake8-mutable
     * https://pypi.org/project/flake8-return
 * https://github.com/timothycrosley/isort
-* http://mypy-lang.org
-* https://pdoc3.github.io
 * https://poetry.eustace.io
 * https://pytest.org
     * https://pypi.org/project/pytest-cov/
@@ -31,6 +29,7 @@ Usage
 This project uses [poetry](https://poetry.eustace.io) and a `Makefile` to glue some tasks
 together.
 
+
 Make targets
 ------------
 
@@ -40,7 +39,5 @@ Make targets
     [isort](https://github.com/timothycrosley/isort))
 * check-code-quality ([bandit](https://bandit.readthedocs.io),
     [flake8](https://gitlab.com/pycqa/flake8),
-    [mypy](http://mypy-lang.org),
     [pylint](https://www.pylint.org))
 * check-dependencies ([safety](https://pyup.io/safety))
-* update-docs ([pdoc3](https://pdoc3.github.io))
