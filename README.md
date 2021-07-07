@@ -12,6 +12,6 @@ Notes
 -----
 
 The template is built around [poetry](https://poetry.eustace.io) and a
-[Makefile]({{ cookiecutter.project_name }}/Makefile) to glue some tasks together. Please
-see [README.md]({{ cookiecutter.project_name }}/README.md) for more detailed
+[Makefile](./%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile) to glue some tasks together. Please
+see [README.md](./%7B%7B%20cookiecutter.project_name%20%7D%7D/README.md) for more detailed
 instructions.
