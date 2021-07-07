@@ -1,8 +1,9 @@
 /.coverage
 /.pytest_cache
+/.venv
+/.tox
 /build
 /dist
-/htmlcov
 
 .DS_Store
 *.py[cod]
