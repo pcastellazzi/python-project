@@ -9,12 +9,6 @@ Tools
 
 * https://bandit.readthedocs.io
 * https://black.readthedocs.io
-* https://gitlab.com/pycqa/flake8
-    * https://pypi.org/project/flake8-bugbear
-    * https://pypi.org/project/flake8-builtins
-    * https://pypi.org/project/flake8-comprehensions
-    * https://pypi.org/project/flake8-mutable
-    * https://pypi.org/project/flake8-return
 * https://github.com/timothycrosley/isort
 * https://poetry.eustace.io
 * https://pytest.org
@@ -38,6 +32,5 @@ Make targets
 * check-code-format ([black](https://black.readthedocs.io),
     [isort](https://github.com/timothycrosley/isort))
 * check-code-quality ([bandit](https://bandit.readthedocs.io),
-    [flake8](https://gitlab.com/pycqa/flake8),
     [pylint](https://www.pylint.org))
 * check-dependencies ([safety](https://pyup.io/safety))
