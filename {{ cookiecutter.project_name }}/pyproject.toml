@@ -24,14 +24,13 @@ classifiers = [
 python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
-bandit = "*"
 black = "*"
-isort = "*"
 pytest = "*"
 pytest-cov = "*"
-pylint = "*"
+ruff = "*"
 safety = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+

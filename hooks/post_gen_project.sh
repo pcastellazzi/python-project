@@ -2,10 +2,11 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-make
+tox
 
 if [[ ! -d .git ]]; then
     git init .
     git add .
     git commit -m "initial commit"
 fi
+
