@@ -1,4 +1,4 @@
-[Cookiecutter](https://github.com/audreyr/cookiecutter) Python 3 Project Template
+[Cookiecutter](https://github.com/cookiecutter/cookiecutter) Python 3 Project Template
 =================================================================================
 
 
