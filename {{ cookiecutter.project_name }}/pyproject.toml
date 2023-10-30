@@ -7,9 +7,7 @@ documentation = "{{ cookiecutter.homepage }}"
 readme = "README.md"
 license = "MIT"
 
-authors = [
-    "{{ cookiecutter.author }} <{{ cookiecutter.author_email }}>"
-]
+authors = ["{{ cookiecutter.author }} <{{ cookiecutter.author_email }}>"]
 
 classifiers = [
     "Environment :: Console",
@@ -21,7 +19,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 
 [tool.poetry.group.dev.dependencies]
 black = "*"
@@ -33,4 +31,3 @@ safety = "*"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
