@@ -15,7 +15,7 @@ check: test check-code-format check-code-quality check-dependencies
 
 .PHONY: check-code-format
 check-code-format:
-	poetry run black --check --quiet $(PYTHON_CODE)
+	poetry run ruff format --check --quiet $(PYTHON_CODE)
 
 
 .PHONY: check-code-quality
