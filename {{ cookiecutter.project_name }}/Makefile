@@ -6,7 +6,12 @@ PYTEST_FLAGS = --quiet --cov={{ cookiecutter.module }} --cov-fail-under=100 --co
 
 
 .PHONY: all
-all: install check
+all: clean install check
+
+
+.PHONY: clean
+clean:
+	git clean -fdx
 
 
 .PHONY: check
