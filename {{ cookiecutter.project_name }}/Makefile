@@ -25,6 +25,7 @@ check-code-quality:
 
 .PHONY: check-dependencies
 check-dependencies:
+	poetry run deptry .
 	poetry run safety check --bare
 
 
