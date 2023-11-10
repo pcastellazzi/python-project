@@ -26,6 +26,7 @@ classifiers = [
 python = "^3.10"
 
 [tool.poetry.group.dev.dependencies]
+deptry = "*"
 pytest = "*"
 pytest-cov = "*"
 ruff = "*"
@@ -50,4 +51,3 @@ ignore = [
     "ISC001", # conflics with the formatter
     "S101",   # use of assert
 ]
-
