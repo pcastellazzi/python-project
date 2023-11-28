@@ -9,4 +9,3 @@ if [[ ! -d .git ]]; then
     git add .
     git commit -m "initial commit"
 fi
-
