@@ -1,8 +1,10 @@
+# cSpell:words MAKEFLAGS
+
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 PYTHON_CODE = {{ cookiecutter.module }}/ tests/
-PYTEST_FLAGS = --quiet --cov={{ cookiecutter.module }} --cov-fail-under=100 --cov-report=term tests/
+PYTEST_FLAGS = --quiet --cov={{ cookiecutter.module }} --cov-fail-under=100 --cov-report=term-missing tests/
 
 
 .PHONY: all
@@ -41,4 +43,4 @@ install:
 
 .PHONY: test
 test:
-	poetry run py.test $(PYTEST_FLAGS)
+	poetry run pytest $(PYTEST_FLAGS)
