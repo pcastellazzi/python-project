@@ -1,28 +1,21 @@
-{{ cookiecutter.project_name }}
-{{ '=' * (cookiecutter.project_name|length) }}
+# {{ cookiecutter.project_name }}
 
 {{ cookiecutter.project_summary }}
 
+##  Tools
 
-Tools
-=====
+* <https://poetry.eustace.io>
+* <https://pytest.org>
+* <https://pytest-cov.readthedocs.io/en/latest/index.html>
+* <https://ruff.rs>
+* <https://fpgmaas.github.io/deptry/>
 
-* https://poetry.eustace.io
-* https://pytest.org
-* https://pytest-cov.readthedocs.io/en/latest/index.html
-* https://ruff.rs
-* https://fpgmaas.github.io/deptry/
-
-
-Usage
-=====
+## Usage
 
 This project uses [poetry](https://poetry.eustace.io) and a `Makefile` to glue
 some tasks together.
 
-
-Make targets
-------------
+##  Make targets
 
 * all (default: run the other task in the listed order)
 * clean (remove files not under version control)

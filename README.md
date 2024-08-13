@@ -1,15 +1,10 @@
-[Cookiecutter](https://github.com/cookiecutter/cookiecutter) Python 3 Project Template
-=================================================================================
+# [Cookiecutter](https://github.com/cookiecutter/cookiecutter) Python 3 Project Template
 
-
-Usage
------
+##  Usage
 
 `cookiecutter https://github.com/pcastellazzi/python-project`
 
-
-Notes
------
+##  Notes
 
 The template is built around [poetry](https://poetry.eustace.io) and a
 [Makefile](./%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile) to glue some tasks together. Please
