@@ -30,7 +30,6 @@ deptry = "*"
 pytest = "*"
 pytest-cov = "*"
 ruff = "*"
-safety = "*"
 
 [tool.ruff]
 builtins = ["_"]

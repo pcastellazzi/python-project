@@ -12,7 +12,6 @@ Tools
 * https://pytest-cov.readthedocs.io/en/latest/index.html
 * https://ruff.rs
 * https://fpgmaas.github.io/deptry/
-* https://pyup.io/safety
 
 
 Usage
@@ -30,4 +29,4 @@ Make targets
 * test (run pytest and enforce code coverage)
 * check-code-format (ruff format)
 * check-code-quality (ruff check)
-* check-dependencies (deptry and safety)
+* check-dependencies (deptry)
