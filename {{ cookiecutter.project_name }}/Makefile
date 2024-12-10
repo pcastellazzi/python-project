@@ -32,7 +32,7 @@ check-code-quality:
 
 .PHONY: check-dependencies
 check-dependencies:
-	poetry run deptry .
+	poetry run deptry $(PYTHON_CODE)
 
 
 .PHONY: install
