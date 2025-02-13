@@ -9,3 +9,4 @@ if [[ ! -d .git ]]; then
 fi
 
 tox
+poetry install
