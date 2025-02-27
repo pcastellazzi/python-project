@@ -4,7 +4,7 @@
 
 ##  Tools
 
-* <https://poetry.eustace.io>
+* <https://docs.astral.sh/uv/>
 * <https://pytest.org>
 * <https://pytest-cov.readthedocs.io/en/latest/index.html>
 * <https://ruff.rs>
@@ -12,7 +12,7 @@
 
 ## Usage
 
-This project uses [poetry](https://poetry.eustace.io) and a `Makefile` to glue
+This project uses [uv](https://docs.astral.sh/uv/) and a `Makefile` to glue
 some tasks together.
 
 ##  Make targets

@@ -1,6 +1,6 @@
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core>=2.0.0"]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
 
 [project]
 dynamic = ["classifiers", "dependencies"]
@@ -16,14 +16,8 @@ authors = [
     {name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.author_email }}"},
 ]
 
-[tool.poetry]
-packages = [{include = "{{ cookiecutter.module }}"}]
-
-[tool.poetry.group.dev.dependencies]
-deptry = "*"
-pytest = "*"
-pytest-cov = "*"
-ruff = "*"
+[dependency-groups]
+dev = ["deptry", "pytest", "pytest-cov", "ruff"]
 
 [tool.ruff]
 builtins = ["_"]
@@ -41,6 +35,6 @@ ignore = [
     "T20", # use of print (flake8-print)
 
     "E501",   # line too long
-    "ISC001", # conflicts with the formatter
-    "S101",   # use of assert
+    "ISC001", # conflicts with ruff
+    "S101",   # conflicts with pytest
 ]
