@@ -4,6 +4,7 @@ IFS=$'\n\t'
 
 DEPENDENCIES=(
     make
+    osv-scanner
     tox
     uv
 )

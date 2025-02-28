@@ -1,8 +1,12 @@
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
+
 PYTHON_CODE = {{ cookiecutter.module }}/ tests/
-PYTEST_FLAGS = -q -Werror --cov={{ cookiecutter.module }} --cov-report=term-missing tests/
+PYTEST_FLAGS = \
+	-q -Werror \
+	--cov={{ cookiecutter.module }} --cov-fail-under=100 --cov-report=term-missing \
+	tests/
 
 
 .PHONY: all
@@ -15,22 +19,10 @@ clean:
 
 
 .PHONY: check
-check: check-code-format check-code-quality check-dependencies
-
-
-.PHONY: check-code-format
-check-code-format:
+check:
 	uv run --active -- ruff format --check --quiet $(PYTHON_CODE)
-
-
-.PHONY: check-code-quality
-check-code-quality:
 	uv run --active -- ruff check $(PYTHON_CODE)
-
-
-.PHONY: check-dependencies
-check-dependencies:
-	uv run --active -- deptry $(PYTHON_CODE)
+	osv-scanner .
 
 
 .PHONY: install

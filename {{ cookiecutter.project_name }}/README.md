@@ -8,7 +8,7 @@
 * <https://pytest.org>
 * <https://pytest-cov.readthedocs.io/en/latest/index.html>
 * <https://ruff.rs>
-* <https://fpgmaas.github.io/deptry/>
+* <https://google.github.io/osv-scanner/>
 
 ## Usage
 
@@ -17,9 +17,8 @@ some tasks together.
 
 ##  Make targets
 
-* all (default: run the other task in the listed order)
+* all (default: runs the other task in the listed order)
 * clean (remove files not under version control)
-* test (run pytest and enforce code coverage)
-* check-code-format (ruff format)
-* check-code-quality (ruff check)
-* check-dependencies (deptry)
+* install (create or update the projects venv)
+* check (runs ruff and osv-scanner)
+* test (runs pytest and enforce code coverage)

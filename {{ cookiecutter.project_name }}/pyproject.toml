@@ -17,7 +17,7 @@ authors = [
 ]
 
 [dependency-groups]
-dev = ["deptry", "pytest", "pytest-cov", "ruff"]
+dev = ["pytest", "pytest-cov", "ruff"]
 
 [tool.ruff]
 builtins = ["_"]
@@ -28,13 +28,11 @@ fixable = ["ALL"]
 select = ["ALL"]
 
 ignore = [
-    "ANN", # annotations (flake8-annotations)
-    "COM", # trailing commas (flake8-commas)
-    "D",   # documentation (pydocstyle)
-    "INP", # implicit namespaces (flake8-no-pep420)
-    "T20", # use of print (flake8-print)
+    "ANN",  # don't force type annotations
+    "D",    # don't force documentation
+    "S101", # conflict with pytest
 
-    "E501",   # line too long
-    "ISC001", # conflicts with ruff
-    "S101",   # conflicts with pytest
+    # conflict with ruff format
+    "COM",  # trailing commas
+    "E501", # line too long
 ]
