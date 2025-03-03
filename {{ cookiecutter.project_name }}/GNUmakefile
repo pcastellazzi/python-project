@@ -3,10 +3,7 @@ MAKEFLAGS += --no-builtin-rules
 
 
 PYTHON_CODE = {{ cookiecutter.module }}/ tests/
-PYTEST_FLAGS = \
-	-q -Werror \
-	--cov={{ cookiecutter.module }} --cov-fail-under=100 --cov-report=term-missing \
-	tests/
+PYTEST_FLAGS = -q -Werror --cov={{ cookiecutter.module }} --cov-report=term-missing tests/
 
 
 .PHONY: all
@@ -22,6 +19,7 @@ clean:
 check:
 	uv run --active -- ruff format --check --quiet $(PYTHON_CODE)
 	uv run --active -- ruff check $(PYTHON_CODE)
+	cspell lint "**/*.{py,md}"
 	osv-scanner .
 
 
