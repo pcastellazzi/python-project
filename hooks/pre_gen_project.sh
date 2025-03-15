@@ -4,8 +4,9 @@ IFS=$'\n\t'
 
 DEPENDENCIES=(
     make
-    poetry
+    osv-scanner
     tox
+    uv
 )
 
 for dependency in "${DEPENDENCIES[@]}"; do

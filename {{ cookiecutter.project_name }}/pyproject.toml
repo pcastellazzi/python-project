@@ -1,46 +1,59 @@
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core>=2.0.0"]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
 
 [project]
-dynamic = ["classifiers", "dependencies"]
+dynamic = ["classifiers"]
 
 description = "{{ cookiecutter.project_summary }}"
 license = "MIT"
 name = "{{ cookiecutter.module }}"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">={{ cookiecutter.python_version }}"
 version = "0.1.0"
 
 authors = [
     {name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.author_email }}"},
 ]
 
-[tool.poetry]
-packages = [{include = "{{ cookiecutter.module }}"}]
+[dependency-groups]
+dev = ["pytest", "pytest-cov", "ruff"]
 
-[tool.poetry.group.dev.dependencies]
-deptry = "*"
-pytest = "*"
-pytest-cov = "*"
-ruff = "*"
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+fail_under = 100
+skip_covered = true
+skip_empty = true
+
+exclude_also = [
+    "@(abc\\.)?abstractmethod",
+    "class .*\\bProtocol\\):",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+]
+
+[tool.pytest.ini_options]
+addopts = ["--quiet", "--strict-markers", "-Werror"]
 
 [tool.ruff]
-builtins = ["_"]
-target-version = "py311"
+target-version = "py{{ cookiecutter.python_version | regex_replace('[^0-9]', '') }}"
 
+builtins = ["_"]
 [tool.ruff.lint]
 fixable = ["ALL"]
 select = ["ALL"]
 
 ignore = [
-    "ANN", # annotations (flake8-annotations)
-    "COM", # trailing commas (flake8-commas)
-    "D",   # documentation (pydocstyle)
-    "INP", # implicit namespaces (flake8-no-pep420)
-    "T20", # use of print (flake8-print)
+    "ANN",  # don't force type annotations
+    "D",    # don't force documentation
+    "S101", # conflict with pytest
 
-    "E501",   # line too long
-    "ISC001", # conflicts with the formatter
-    "S101",   # use of assert
+    # conflict with ruff format
+    "COM",  # trailing commas
+    "E501", # line too long
 ]
+
+[tool.uv]
+python-preference = "only-managed"

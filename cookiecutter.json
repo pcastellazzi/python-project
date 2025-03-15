@@ -1,11 +1,17 @@
 {
-    "project_name": "hello-world",
-    "project_summary": "{{ cookiecutter.project_name }}",
-    "project_version": "0.1.0",
+  "project_name": "hello-world",
+  "project_summary": "{{ cookiecutter.project_name }}",
+  "project_version": "0.1.0",
 
-    "author": "Pablo Castellazzi",
-    "author_email": "pablo.castellazzi@icloud.com",
-    "homepage": "https://github.com/pcastellazzi/{{ cookiecutter.project_name.lower() }}/",
-    "documentation": "https://pcastellazzi.github.io/{{ cookiecutter.project_name.lower() }}/",
-    "module": "{{ cookiecutter.project_name.lower().replace('-', '_') }}"
+  "author": "Pablo Castellazzi",
+  "author_email": "pablo.castellazzi@icloud.com",
+  "homepage": "https://github.com/pcastellazzi/{{ cookiecutter.project_name.lower() }}/",
+  "documentation": "https://pcastellazzi.github.io/{{ cookiecutter.project_name.lower() }}/",
+  "module": "{{ cookiecutter.project_name.lower().replace('-', '_') }}",
+  "python_version": "3.11",
+
+  "_extensions": [
+    "local_extensions.python_versions",
+    "local_extensions.regex_replace"
+  ]
 }
