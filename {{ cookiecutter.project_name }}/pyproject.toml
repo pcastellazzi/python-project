@@ -3,13 +3,13 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [project]
-dynamic = ["classifiers", "dependencies"]
+dynamic = ["classifiers"]
 
 description = "{{ cookiecutter.project_summary }}"
 license = "MIT"
 name = "{{ cookiecutter.module }}"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">={{ cookiecutter.python_version }}"
 version = "0.1.0"
 
 authors = [
@@ -19,10 +19,28 @@ authors = [
 [dependency-groups]
 dev = ["pytest", "pytest-cov", "ruff"]
 
-[tool.ruff]
-builtins = ["_"]
-target-version = "py311"
+[tool.coverage.run]
+branch = true
 
+[tool.coverage.report]
+fail_under = 100
+skip_covered = true
+skip_empty = true
+
+exclude_also = [
+    "@(abc\\.)?abstractmethod",
+    "class .*\\bProtocol\\):",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+]
+
+[tool.pytest.ini_options]
+addopts = ["--quiet", "--strict-markers", "-Werror"]
+
+[tool.ruff]
+target-version = "py{{ cookiecutter.python_version | regex_replace('[^0-9]', '') }}"
+
+builtins = ["_"]
 [tool.ruff.lint]
 fixable = ["ALL"]
 select = ["ALL"]
@@ -36,3 +54,6 @@ ignore = [
     "COM",  # trailing commas
     "E501", # line too long
 ]
+
+[tool.uv]
+python-preference = "only-managed"
