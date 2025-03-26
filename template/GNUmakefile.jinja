@@ -1,0 +1,50 @@
+{%- import "macros.jinja" as m -%}
+
+MAKEFLAGS += --warn-undefined-variables
+MAKEFLAGS += --no-builtin-rules
+
+PYTHON_CODE = src/ tests/
+PYTHON_VERSIONS = {{ m.python_versions(python_version) }}
+
+AUTHOR_NAME = {{ user_name }}
+AUTHOR_EMAIL = {{ user_email }}
+
+.PHONY: all
+all: install check coverage
+
+
+.PHONY: clean
+clean:
+	git clean -fdx
+
+
+.PHONY: install
+install:
+	uv sync
+
+
+.PHONY: check
+check:
+	uvx pre-commit run --all-files
+
+
+.PHONY: coverage
+coverage:
+	uv run -- coverage erase
+	uv run -- coverage run -m pytest
+	uv run -- coverage combine
+	uv run -- coverage report
+	uv run -- coverage html -d htmlcov
+
+
+.PHONY: test
+test:
+	uv run -- pytest
+
+
+.PHONY: integration
+integration: $(PYTHON_VERSIONS)
+
+.PHONY: $(PYTHON_VERSIONS)
+$(PYTHON_VERSIONS):
+	$(MAKE) UV_PROJECT_ENVIRONMENT=.uv/$@ UV_PYTHON=$@ install test

@@ -1,0 +1,41 @@
+project_module:
+  type: str
+  help: Project Module
+  default: hello_world
+  validator: >-
+    {% if not project_module.isidentifier() %}
+    project_module must be a valid python identifier
+    {% endif %}
+
+python_version:
+  type: str
+  help: Python Version
+  default: 3.11
+  validator: >-
+    {% if not (python_version | regex_search('^3\.\d+$')) %}
+    project_version must be a valid python 3 version without patch
+    {% endif %}
+
+user_name:
+  type: str
+  help: User Name
+  default: Pablo Castellazzi
+
+user_email:
+  type: str
+  help: User Email
+  default: pablo.castellazzi@icloud.com
+
+github_user:
+  type: str
+  help: Github User
+  default: pcastellazzi
+
+github_repo:
+  type: str
+  help: Github github_url
+  default: "https://github.com/{{ github_user }}/{{ project_module }}.git"
+
+_subdirectory: template
+_tasks:
+  - ["{{ _copier_conf.src_path }}/post_generation.sh"]

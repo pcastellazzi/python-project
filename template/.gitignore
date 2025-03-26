@@ -1,0 +1,17 @@
+# build artifacts
+/build
+/dist
+wheels/
+*.egg-info
+
+# python development tools
+/.coverage
+/.venv
+/.uv
+/htmlcov
+/.*_cache
+*.py[cod]
+__pycache__
+
+# operating system files
+.DS_Store

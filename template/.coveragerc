@@ -1,0 +1,12 @@
+[run]
+branch = true
+dynamic_context = test_function
+parallel = true
+plugins = covdefaults
+
+[html]
+show_contexts = true
+skip_covered = false
+
+[report]
+fail_under = 100

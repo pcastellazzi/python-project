@@ -1,0 +1,15 @@
+version = 1
+
+[[annotations]]
+SPDX-FileCopyrightText = "Copyright © 2025 Pablo Castellazzi <pablo.castellazzi@icloud.com>"
+SPDX-License-Identifier = "MIT"
+precedence = "override"
+
+path = [
+    ".gitignore",
+    "README.md",
+    "copier.yml",
+    "macros.jinja",
+    "post_generation.sh",
+    "template/**",
+]

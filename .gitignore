@@ -1,0 +1,7 @@
+/.vscode
+/.venv
+/.*_cache
+
+.DS_Store
+*.py[cod]
+__pycache__

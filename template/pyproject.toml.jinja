@@ -1,0 +1,49 @@
+{%- import "macros.jinja" as m -%}
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.version]
+path = "src/{{ project_module }}/__about__.py"
+
+[project]
+dynamic = ["version"]
+
+description = "{{ project_module }}"
+keywords = []
+license = "MIT"
+name = "{{ project_module }}"
+readme = "README.md"
+requires-python = ">={{ python_version }}"
+
+urls.Documentation = "{{ github_repo }}#readme"
+urls.Repository = "{{ github_repo }}"
+urls.Issues = "{{ github_repo }}/issues"
+
+authors = [
+    {name = "{{ user_name }}", email = "{{ user_email }}"},
+]
+maintainers = [
+    {name = "{{ user_name }}", email = "{{ user_email }}"},
+]
+
+classifiers = [
+    {{ m.classifiers(python_version) }}
+]
+
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "covdefaults>=2.3.0",
+    "coverage>=7.7.0",
+    "pytest>=8.3.0",
+    "pytest-xdist>=3.6.0",
+]
+
+[tool.pytest.ini_options]
+addopts = ["--quiet", "--strict-markers", "-Werror"]
+
+[tool.uv]
+python-preference = "only-managed"
