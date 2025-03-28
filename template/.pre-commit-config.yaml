@@ -4,6 +4,16 @@ repos:
     hooks:
       - id: osv-scanner
 
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v5.0.2
+    hooks:
+      - id: reuse-lint-file
+
   - repo: https://github.com/astral-sh/uv-pre-commit
     rev: "0.6.10"
     hooks:
@@ -15,8 +25,3 @@ repos:
     hooks:
       - id: ruff
       - id: ruff-format
-
-  - repo: https://github.com/fsfe/reuse-tool
-    rev: v5.0.2
-    hooks:
-      - id: reuse-lint-file

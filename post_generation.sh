@@ -26,8 +26,8 @@ create_or_update_repo() {
 
     git init .
     uvx pre-commit install
-	uvx pre-commit autoupdate
-	uvx reuse download --all
+    uvx pre-commit autoupdate
+    uvx reuse download --all
 
     git add .
     git commit -m "initial commit"

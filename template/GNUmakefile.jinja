@@ -6,9 +6,6 @@ MAKEFLAGS += --no-builtin-rules
 PYTHON_CODE = src/ tests/
 PYTHON_VERSIONS = {{ m.python_versions(python_version) }}
 
-AUTHOR_NAME = {{ user_name }}
-AUTHOR_EMAIL = {{ user_email }}
-
 .PHONY: all
 all: install check coverage
 
