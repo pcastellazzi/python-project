@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [tool.hatch.version]
-path = "src/{{ project_module }}/__about__.py"
+path = "{{ m.version_file(project_module) }}"
 
 [project]
 dynamic = ["version"]
@@ -39,6 +39,7 @@ dev = [
     "covdefaults>=2.3.0",
     "coverage>=7.7.0",
     "pytest>=8.3.0",
+    "pytest-cov>=6.0.0",
     "pytest-xdist>=3.6.0",
 ]
 

@@ -6,6 +6,10 @@ MAKEFLAGS += --no-builtin-rules
 PYTHON_CODE = src/ tests/
 PYTHON_VERSIONS = {{ m.python_versions(python_version) }}
 
+PYTEST_COVERAGE = --cov=src/ --cov-context=test --cov-report=term-missing
+PYTEST_SETTINGS = --numprocesses=auto
+
+
 .PHONY: all
 all: install check coverage
 
@@ -27,16 +31,12 @@ check:
 
 .PHONY: coverage
 coverage:
-	uv run -- coverage erase
-	uv run -- coverage run -m pytest
-	uv run -- coverage combine
-	uv run -- coverage report
-	uv run -- coverage html -d htmlcov
+	uv run -- pytest $(PYTEST_COVERAGE)
 
 
 .PHONY: test
 test:
-	uv run -- pytest
+	uv run -- pytest $(PYTEST_SETTINGS)
 
 
 .PHONY: integration

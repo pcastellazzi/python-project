@@ -1,12 +1,17 @@
+{%- import "macros.jinja" as m -%}
+
 [run]
 branch = true
-dynamic_context = test_function
 parallel = true
 plugins = covdefaults
+
+omit =
+  {{ m.version_file(project_module) }}
 
 [html]
 show_contexts = true
 skip_covered = false
+skip_empty = true
 
 [report]
 fail_under = 100

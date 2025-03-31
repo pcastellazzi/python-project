@@ -8,7 +8,6 @@ wheels/
 /.coverage
 /.venv
 /.uv
-/htmlcov
 /.*_cache
 *.py[cod]
 __pycache__
