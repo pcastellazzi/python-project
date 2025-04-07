@@ -166,3 +166,9 @@ make check coverage integration
   the same versions of dependencies are used across different environments. It
   is crucial for reproducibility and should always be kept in the repository.
   More information at <https://docs.astral.sh/uv/concepts/projects/sync/>.
+
+## Notes
+
+- Remember to add to `$XDG_CONFIG_HOME/git/ignore`:
+  - Your IDE configuration files (`/.vscode`, `/.idea`, etc.).
+  - System specific files like `.DS_Store`.

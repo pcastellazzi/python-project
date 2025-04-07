@@ -1,7 +1,7 @@
 # build artifacts
 /build
 /dist
-wheels/
+/wheels
 *.egg-info
 
 # python development tools
@@ -11,6 +11,3 @@ wheels/
 /.*_cache
 *.py[cod]
 __pycache__
-
-# operating system files
-.DS_Store
