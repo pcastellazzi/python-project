@@ -170,5 +170,10 @@ make check coverage integration
 ## Notes
 
 - Remember to add to `$XDG_CONFIG_HOME/git/ignore`:
+
   - Your IDE configuration files (`/.vscode`, `/.idea`, etc.).
   - System specific files like `.DS_Store`.
+
+- You can store defaults for user name and email in
+  `$XDG_CONFIG_HOME/copier/settings.xml`. See
+  <https://copier.readthedocs.io/en/stable/settings/> for more details.

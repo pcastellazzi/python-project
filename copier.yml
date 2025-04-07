@@ -19,17 +19,17 @@ python_version:
 user_name:
   type: str
   help: User Name
-  default: Pablo Castellazzi
+  default: John Doe
 
 user_email:
   type: str
   help: User Email
-  default: pablo.castellazzi@icloud.com
+  default: john.doe@example.org
 
 github_user:
   type: str
   help: Github User
-  default: pcastellazzi
+  default: jdoe
 
 github_repo:
   type: str
