@@ -7,6 +7,7 @@ precedence = "override"
 
 path = [
     ".gitignore",
+    ".pre-commit-config.yaml",
     "README.md",
     "copier.yml",
     "macros.jinja",
