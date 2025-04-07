@@ -166,24 +166,3 @@ make check coverage integration
   the same versions of dependencies are used across different environments. It
   is crucial for reproducibility and should always be kept in the repository.
   More information at <https://docs.astral.sh/uv/concepts/projects/sync/>.
-
-## Notes
-
-- `pytest-xdist` is enabled for normal runs, but not coverage runs. It
-  triggers errors if you have less test cases than CPUs, which is the case
-  when you initialize a project. To enable it you need to change `GNUmakefile`
-  from:
-
-  ```Makefile
-  .PHONY: coverage
-  coverage:
-          uv run -- pytest $(PYTEST_COVERAGE)
-  ```
-
-  to:
-
-  ```Makefile
-  .PHONY: coverage
-  coverage:
-          uv run -- pytest $(PYTEST_SETTINGS) $(PYTEST_COVERAGE)
-  ```

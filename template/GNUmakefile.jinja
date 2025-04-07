@@ -7,7 +7,7 @@ PYTHON_CODE = src/ tests/
 PYTHON_VERSIONS = {{ m.python_versions(python_version) }}
 
 PYTEST_COVERAGE = --cov=src/ --cov-context=test --cov-report=term-missing
-PYTEST_SETTINGS = --numprocesses=auto
+PYTEST_SETTINGS =
 
 
 .PHONY: all
@@ -31,7 +31,7 @@ check:
 
 .PHONY: coverage
 coverage:
-	uv run -- pytest $(PYTEST_COVERAGE)
+	uv run -- pytest $(PYTEST_COVERAGE) $(PYTEST_SETTINGS)
 
 
 .PHONY: test

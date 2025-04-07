@@ -35,13 +35,7 @@ classifiers = [
 dependencies = []
 
 [dependency-groups]
-dev = [
-    "covdefaults>=2.3.0",
-    "coverage>=7.7.0",
-    "pytest>=8.3.0",
-    "pytest-cov>=6.0.0",
-    "pytest-xdist>=3.6.0",
-]
+dev = ["covdefaults>=2.3", "coverage>=7.7", "pytest>=8.3", "pytest-cov>=6.0"]
 
 [tool.pytest.ini_options]
 addopts = ["--quiet", "--strict-markers", "-Werror"]
