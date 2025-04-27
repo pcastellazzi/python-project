@@ -1,6 +1,25 @@
+{%- set PYTHON_MINOR_RANGE = range(9, 14) -%}
+{%- set PYTHON_MINOR_MIN = PYTHON_MINOR_RANGE.start -%}
+{%- set PYTHON_MINOR_MAX = PYTHON_MINOR_RANGE.stop - 1 -%}
+
+{%- macro check_project_module(value) -%}
+{%- if not value.isidentifier() %}
+project_module must be a valid python identifier
+{%- endif %}
+{%- endmacro -%}
+
+{%- macro check_python_version(value) -%}
+{%- if not (value | regex_search('^3\.\d+$')) %}
+python_version must be a valid python 3 version without patch
+{%- elif (value.split(".", 2)[1] | int) not in PYTHON_MINOR_RANGE %}
+python_version must be between {{ PYTHON_MINOR_MIN }} and {{ PYTHON_MINOR_MAX }}
+{%- endif %}
+{%- endmacro -%}
+
 {%- macro python_versions(start) -%}
-{%- set minor = start.split(".", 2)[1] | int -%}
-3.{{ minor }} 3.{{ minor + 1 }} 3.{{ minor + 2 }}
+{%- set start = [PYTHON_MINOR_MAX, start.split(".", 2)[1] | int] | min -%}
+{%- set end = [PYTHON_MINOR_MAX, start + 2] | min -%}
+{%- for minor in range(start, end + 1) -%}3.{{ minor }} {% endfor -%}
 {%- endmacro -%}
 
 {%- macro classifiers(start) -%}
@@ -17,17 +36,15 @@
 # "Development Status :: 7 - Inactive",
 
 "Intended Audience :: Developers",
-"Operating System :: Microsoft :: Windows",
 "Operating System :: POSIX",
 "Operating System :: Unix",
 
 "Programming Language :: Python :: 3 :: Only",
 "Programming Language :: Python :: 3",
-"Programming Language :: Python :: 3.{{ minor }}",
-"Programming Language :: Python :: 3.{{ minor + 1 }}",
-"Programming Language :: Python :: 3.{{ minor + 2 }}",
+{%- for version in python_versions(start).strip().split() %}
+"Programming Language :: Python :: {{ version }}",
+{%- endfor %}
 "Programming Language :: Python :: Implementation :: CPython",
-"Programming Language :: Python :: Implementation :: PyPy",
 "Programming Language :: Python",
 
 "Topic :: Utilities",

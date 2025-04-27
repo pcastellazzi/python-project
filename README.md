@@ -175,5 +175,5 @@ make check coverage integration
   - System specific files like `.DS_Store`.
 
 - You can store defaults for user name and email in
-  `$XDG_CONFIG_HOME/copier/settings.xml`. See
+  `$XDG_CONFIG_HOME/copier/settings.yml`. See
   <https://copier.readthedocs.io/en/stable/settings/> for more details.

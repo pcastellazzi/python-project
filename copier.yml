@@ -3,18 +3,16 @@ project_module:
   help: Project Module
   default: hello_world
   validator: >-
-    {% if not project_module.isidentifier() %}
-    project_module must be a valid python identifier
-    {% endif %}
+    {%- import "macros.jinja" as m -%}
+    {{ m.check_project_module(project_module) }}
 
 python_version:
   type: str
   help: Python Version
   default: 3.11
   validator: >-
-    {% if not (python_version | regex_search('^3\.\d+$')) %}
-    project_version must be a valid python 3 version without patch
-    {% endif %}
+    {%- import "macros.jinja" as m -%}
+    {{ m.check_python_version(python_version) }}
 
 user_name:
   type: str
