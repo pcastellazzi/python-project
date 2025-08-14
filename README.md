@@ -18,7 +18,7 @@ To start a new project, run the following command, replacing `<PROJECT-PATH>`
 with the desired location for your new project:
 
 ```bash
-uvx run copier https://github.com/pcastellazzi/python-project.git <PROJECT-PATH>
+uvx copier copy https://github.com/pcastellazzi/python-project.git <PROJECT-PATH>
 ```
 
 This template comes with an initialization script. It will not run unless

@@ -8,7 +8,7 @@ project_module:
 
 python_version:
   type: str
-  help: Python Version
+  help: Minimum Supported Python Version
   default: 3.11
   validator: >-
     {%- import "macros.jinja" as m -%}
