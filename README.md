@@ -124,6 +124,8 @@ make check coverage integration
     Executes all tests.
   - `integration`
     Executes tests under multiple Python versions.
+  - `update-dependencies`
+    Update project dependencies and `pre-commit` hooks.
 
 ## Project Settings
 
