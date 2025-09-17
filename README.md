@@ -22,7 +22,7 @@ uvx copier copy https://github.com/pcastellazzi/python-project.git <PROJECT-PATH
 ```
 
 This template comes with an initialization script. It will not run unless
-you use the flat `--trust` with `copier`. The script is available at
+you use the `--trust` flag with `copier`. The script is available at
 <https://github.com/pcastellazzi/python-project/blob/master/post_generation.sh>
 for you to review. Its purpose is to initialize the git repo. If you want to
 do it manually, proceed to:
@@ -47,7 +47,7 @@ uvx reuse download --all
 git add .
 git commit -m "initial commit"
 
-# make sure everything work as expected
+# make sure everything works as expected
 make check coverage integration
 ```
 
@@ -60,10 +60,10 @@ make check coverage integration
 
 - `src/PACKAGE_NAME/__about__.py`
   This file stores the project's metadata, including its version, author, and
-  license information. Following [Hatch's](https://hatch.pypa.io/) convention.
-  It centralizes these details, enabling tools to easily access and modify
-  them. For instance, you can automatically update the version based on the
-  latest tag from your VCS. See <https://github.com/ofek/hatch-vcs>.
+  license information, following `Hatch's` convention. It centralizes these
+  details, enabling tools to easily access and modify them. For instance, you
+  can automatically update the version based on the latest tag from your VCS.
+  See <https://github.com/ofek/hatch-vcs>.
 
 - `tests/`
   This directory houses the project's test suite. Using `pytest` and
@@ -171,11 +171,11 @@ make check coverage integration
 
 ## Notes
 
-- Remember to add to `$XDG_CONFIG_HOME/git/ignore`:
+- Remember to add the following to `$XDG_CONFIG_HOME/git/ignore`:
 
   - Your IDE configuration files (`/.vscode`, `/.idea`, etc.).
   - System specific files like `.DS_Store`.
 
-- You can store defaults for user name and email in
+- You can store defaults for username and email in
   `$XDG_CONFIG_HOME/copier/settings.yml`. See
   <https://copier.readthedocs.io/en/stable/settings/> for more details.
