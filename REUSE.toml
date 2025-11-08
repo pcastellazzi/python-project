@@ -8,9 +8,11 @@ precedence = "override"
 path = [
     ".gitignore",
     ".pre-commit-config.yaml",
+    "GNUmakefile",
     "README.md",
     "copier.yaml",
     "macros.jinja",
     "post_generation.sh",
+    "scripts/**",
     "template/**",
 ]
