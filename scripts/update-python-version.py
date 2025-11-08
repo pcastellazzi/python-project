@@ -74,7 +74,7 @@ if __name__ == "__main__":
     import sys
     import typing
 
-    def abort(msg: str, *, exit_code: int = -1) -> typing.NoReturn:
+    def abort(msg: str, *, exit_code: int = 1) -> typing.NoReturn:
         sys.stderr.write(f"ERROR: {msg}\n")
         sys.stderr.flush()
         sys.exit(exit_code)
@@ -83,8 +83,8 @@ if __name__ == "__main__":
         save_python_version(get_latest_stable_tag())
     except HTTPError as exc:
         body = exc.read().decode()
-        abort(f"HTTP {exc.code} {exc.reason}: {body}", exit_code=-3)
+        abort(f"HTTP {exc.code} {exc.reason}: {body}", exit_code=4)
     except IOError as exc:
-        abort(str(exc), exit_code=-2)
+        abort(str(exc), exit_code=3)
     except ValueError as exc:
-        abort(str(exc), exit_code=-1)
+        abort(str(exc), exit_code=2)
