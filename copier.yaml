@@ -1,3 +1,4 @@
+---
 project_module:
   type: str
   help: Project Module
@@ -34,6 +35,7 @@ github_repo:
   help: Github github_url
   default: "https://github.com/{{ github_user }}/{{ project_module }}.git"
 
+_answers_file: .copier-answers.yaml
 _subdirectory: template
 _tasks:
   - ["{{ _copier_conf.src_path }}/post_generation.sh"]
