@@ -1,12 +1,12 @@
 version = 1
 
 [[annotations]]
-SPDX-FileCopyrightText = "Copyright © {{ "%Y" | strftime }} {{ user_name }} <{{ user_email }}>"
+SPDX-FileCopyrightText = "Copyright © {{ '%Y' | strftime }} {{ user_name }} <{{ user_email }}>"
 SPDX-License-Identifier = "MIT"
 precedence = "override"
 
 path = [
-    ".copier-answers.yml",
+    ".copier-answers.yaml",
     ".coveragerc",
     ".gitignore",
     ".pre-commit-config.yaml",
@@ -15,7 +15,9 @@ path = [
     "pyproject.toml",
     "README.md",
     "ruff.toml",
-    "src/**",
-    "tests/**",
+    "src/{{ project_module }}/__about__.py",
+    "src/{{ project_module }}/__init__.py",
+    "tests/__init__.py",
+    "tests/test_version.py",
     "uv.lock",
 ]
