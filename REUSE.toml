@@ -6,6 +6,7 @@ SPDX-License-Identifier = "MIT"
 precedence = "override"
 
 path = [
+    ".editorconfig",
     ".gitignore",
     ".pre-commit-config.yaml",
     "README.md",
