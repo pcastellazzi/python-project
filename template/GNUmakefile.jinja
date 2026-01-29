@@ -22,11 +22,13 @@ clean:
 .PHONY: install
 install:
 	uv sync
+	pre-commit install
+	reuse download --all
 
 
 .PHONY: check
 check:
-	uvx pre-commit run --all-files
+	pre-commit run --all-files
 
 
 .PHONY: coverage
@@ -42,7 +44,7 @@ test:
 .PHONY: update-dependencies
 update-dependencies:
 	uv sync --upgrade
-	uvx pre-commit autoupdate
+	pre-commit autoupdate
 
 
 .PHONY: integration
