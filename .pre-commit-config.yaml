@@ -1,10 +1,26 @@
 repos:
-  - repo: https://github.com/fsfe/reuse-tool
-    rev: v6.1.2
-    hooks:
-      - id: reuse-lint-file
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
       - id: end-of-file-fixer
+
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v6.2.0
+    hooks:
+      - id: reuse-lint-file
+
+  - repo: local
+    hooks:
+      # official hook uses docker, i prefer a local copy
+      - id: shellcheck
+        name: shell check
+        entry: shellcheck
+        language: unsupported
+        types: [shell]
+
+      # there is no official shell format hook
+      - id: shellformat
+        name: shell format
+        entry: shfmt --diff
+        language: unsupported
+        types: [shell]
