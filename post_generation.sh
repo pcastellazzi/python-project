@@ -3,36 +3,32 @@ set -euo pipefail
 IFS=$'\n\t'
 
 check_external_dependencies() {
-    DEPENDENCIES=(
-        git
-        make
-        uv
-    )
-
-    for dependency in "${DEPENDENCIES[@]}"; do
-        if ! type -p "${dependency}" >/dev/null; then
-            echo >&2 "ERROR: command ${dependency} is missing"
-            exit 1
-        fi
-    done
+	DEPENDENCIES=(git make pre-commit reuse uv)
+	for dependency in "${DEPENDENCIES[@]}"; do
+		if ! command -v "${dependency}" >/dev/null 2>&1; then
+			echo >&2 "ERROR: command ${dependency} is missing"
+			exit 1
+		fi
+	done
 }
 
 create_or_update_repo() {
-    if [[ -d .git ]]; then
-        return
-    fi
+	case "${COPIER_OPERATION:-}" in
+	copy)
+		git init .
+		make install
+		make update-dependencies
 
-    make install
+		git add .
+		git commit -m "initial commit"
+		;;
 
-    git init .
-    uvx pre-commit install
-    uvx pre-commit autoupdate
-    uvx reuse download --all
-
-    git add .
-    git commit -m "initial commit"
-
-    make check coverage integration
+	update)
+		make install
+		make update-dependencies
+		;;
+	esac
+	make check coverage integration
 }
 
 check_external_dependencies
