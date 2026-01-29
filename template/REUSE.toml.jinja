@@ -8,6 +8,7 @@ precedence = "override"
 path = [
     ".copier-answers.yml",
     ".coveragerc",
+    ".editorconfig",
     ".gitignore",
     ".pre-commit-config.yaml",
     ".python-version",
@@ -15,7 +16,7 @@ path = [
     "pyproject.toml",
     "README.md",
     "ruff.toml",
-    "src/**",
-    "tests/**",
+    "src/{{ project_module }}/__about__.py",
+    "tests/test_version.py",
     "uv.lock",
 ]
