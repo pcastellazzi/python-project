@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 check_external_dependencies() {
-	DEPENDENCIES=(git make pre-commit reuse uv)
+	DEPENDENCIES=(git make prek reuse uv)
 	for dependency in "${DEPENDENCIES[@]}"; do
 		if ! command -v "${dependency}" >/dev/null 2>&1; then
 			echo >&2 "ERROR: command ${dependency} is missing"

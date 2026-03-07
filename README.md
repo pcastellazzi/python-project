@@ -12,7 +12,7 @@ are linked below:
 
 - [git](https://git-scm.com/)
 - [make](https://www.gnu.org/software/make/)
-- [pre-commit](https://pre-commit.com/)
+- [prek](https://prek.j178.dev/)
 - [reuse](https://reuse.software/)
 - [uv](https://docs.astral.sh/uv/)
 
@@ -33,7 +33,7 @@ do it manually, proceed to:
 # initialize the git repo (the rest of the tooling depends on it)
 git init .
 
-# setup project (uv, pre-commit, reuse)
+# setup project (uv, prek, reuse)
 make setup
 
 # the project is done, save it
@@ -69,12 +69,11 @@ make check coverage integration
   reproducibility, and easy tool management. It streamlines the development
   workflow and helps maintain a consistent environment across different
   machines.
-- [pre-commit](https://pre-commit.com/)
+- [prek](https://prek.j178.dev/)
   This tool automates code quality checks before each commit, preventing bugs
   and enforcing code style consistency. By running linters, formatters, and
   security scanners, it helps maintain a high standard of code quality and
   reduces the risk of introducing errors. The specific hooks used are:
-
   - `gitleaks`
     Scans for credentials left in the repo, preventing accidental exposure of
     sensitive information.
@@ -94,12 +93,11 @@ make check coverage integration
   While not a traditional build tool in this context, `make` is used for task
   execution, providing a convenient way to run common development tasks. The
   following targets are available:
-
   - `all`
     An alias for `make setup check coverage`, running the most important
     checks.
   - `check`
-    Runs all `pre-commit` hooks on all files.
+    Runs all `prek` hooks on all files.
   - `clean`
     Removes all temporary files, using `git clean` under the hood. Be
     cautious, as uncommitted changes may be lost.
@@ -110,11 +108,11 @@ make check coverage integration
     Executes tests under multiple Python versions.
   - `setup`
     Creates the initial virtual environment, synchronizes dependencies,
-    pre-commit hooks and licenses.
+    `prek` hooks and licenses.
   - `test`
     Executes all tests.
   - `update-dependencies`
-    Update project dependencies and `pre-commit` hooks.
+    Update project dependencies and `prek` hooks.
 
 ## Project Settings
 
