@@ -8,7 +8,6 @@ precedence = "override"
 path = [
   ".editorconfig",
   ".gitignore",
-  ".pre-commit-config.yaml",
   ".prekignore",
   "GNUmakefile",
   "LICENSES/MIT.txt",
@@ -17,6 +16,7 @@ path = [
   "copier.yml",
   "macros.jinja",
   "post_generation.sh",
+  "prek.toml",
   "scripts/update-python-version.sh",
   "template/.coveragerc.jinja",
   "template/.editorconfig",

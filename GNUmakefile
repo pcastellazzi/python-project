@@ -18,5 +18,5 @@ update-python-version:
 
 .PHONY: update-prek-hooks
 update-prek-hooks:
-	prek autoupdate --config .pre-commit-config.yaml
-	prek autoupdate --config template/.pre-commit-config.yaml
+	prek auto-update --cooldown-days 7 --config prek.toml
+	prek auto-update --cooldown-days 7 --config template/prek.toml

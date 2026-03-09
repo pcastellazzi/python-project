@@ -1,0 +1,37 @@
+#:schema https://www.schemastore.org/prek.json
+minimum_prek_version = "0.3.4"
+
+[[repos]]
+repo = "builtin"
+hooks = [
+  {id = "check-executables-have-shebangs"},
+  {id = "check-json"},
+  {id = "check-toml"},
+  {id = "check-yaml"},
+  {id = "detect-private-key"},
+  {id = "end-of-file-fixer"},
+  {id = "mixed-line-ending"},
+  {id = "trailing-whitespace"},
+]
+
+[[repos]]
+repo = "https://github.com/fsfe/reuse-tool"
+rev = "v6.2.0"
+hooks = [{id = "reuse-lint-file"}]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+entry = "shellcheck"
+id = "shellcheck"
+language = "system"
+name = "shell check"
+types = ["shell"]
+
+[[repos.hooks]]
+entry = "shfmt --diff"
+id = "shellformat"
+language = "system"
+name = "shell format"
+types = ["shell"]
