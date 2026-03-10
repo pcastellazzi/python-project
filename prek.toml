@@ -35,3 +35,11 @@ id = "shellformat"
 language = "system"
 name = "shell format"
 types = ["shell"]
+
+[[repos.hooks]]
+entry = "make test"
+id = "test"
+language = "system"
+name = "test"
+always_run = true
+pass_filenames = false

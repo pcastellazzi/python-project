@@ -20,3 +20,11 @@ update-python-version:
 update-prek-hooks:
 	prek auto-update --cooldown-days 7 --config prek.toml
 	prek auto-update --cooldown-days 7 --config template/prek.toml
+
+
+.PHONY: test
+test:
+	export UV_LINK_MODE=copy;\
+	export TARGET_DIR=$$(mktemp -t --directory python-project.XXXXXXXX);\
+	uvx copier copy --defaults --quiet --trust --vcs-ref HEAD . "$${TARGET_DIR}";\
+	rm -rf "$${TARGET_DIR}"
