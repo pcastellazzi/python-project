@@ -37,13 +37,14 @@ dependencies = []
 [dependency-groups]
 dev = [
     "covdefaults>=2.3",
-    "coverage>=7.7",
-    "pytest>=8.3",
-    "pytest-cov>=6.0",
+    "coverage>=7.13",
+    "pytest>=9.0",
+    "pytest-cov>=7.0",
 ]
 
 [tool.pytest.ini_options]
 addopts = ["--quiet", "--strict-markers", "-Werror"]
 
 [tool.uv]
+exclude-newer = "7 days"
 python-preference = "only-managed"

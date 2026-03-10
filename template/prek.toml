@@ -1,0 +1,30 @@
+#--:schema https://www.schemastore.org/prek.json
+minimum_prek_version = "0.3.4"
+
+[[repos]]
+repo = "https://github.com/google/osv-scanner/"
+rev = "v2.3.3"
+
+[[repos.hooks]]
+id = "osv-scanner"
+args = ["scan", "source", "--recursive", "."]
+
+[[repos]]
+repo = "https://github.com/gitleaks/gitleaks"
+rev = "v8.30.0"
+hooks = [{id = "gitleaks"}]
+
+[[repos]]
+repo = "https://github.com/fsfe/reuse-tool"
+rev = "v6.2.0"
+hooks = [{id = "reuse-lint-file"}]
+
+[[repos]]
+repo = "https://github.com/astral-sh/uv-pre-commit"
+rev = "0.10.9"
+hooks = [{id = "uv-lock"}, {id = "uv-sync"}]
+
+[[repos]]
+repo = "https://github.com/astral-sh/ruff-pre-commit"
+rev = "v0.15.5"
+hooks = [{id = "ruff-check"}, {id = "ruff-format"}]
