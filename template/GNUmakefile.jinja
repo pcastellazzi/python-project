@@ -44,7 +44,7 @@ test:
 .PHONY: update-dependencies
 update-dependencies:
 	uv sync --upgrade
-	prek autoupdate
+	prek auto-update --cooldown-days 7
 
 
 .PHONY: integration
