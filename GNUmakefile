@@ -18,8 +18,8 @@ update-python-version:
 
 .PHONY: update-prek-hooks
 update-prek-hooks:
-	prek auto-update --cooldown-days 7 --config prek.toml
-	prek auto-update --cooldown-days 7 --config template/prek.toml
+	prek auto-update --cooldown-days 7 --freeze --config prek.toml
+	prek auto-update --cooldown-days 7 --freeze --config template/prek.toml
 
 
 .PHONY: test
