@@ -14,18 +14,15 @@ check_external_dependencies() {
 
 create_or_update_repo() {
 	case "${COPIER_OPERATION:-}" in
-	copy)
-		git init .
-		make install
-		make update-dependencies
-
-		git add .
-		git commit -m "initial commit"
-		;;
-
-	update)
-		make install
-		make update-dependencies
+	copy | update)
+		if [[ -d .git ]]; then
+			make install update-dependencies
+		else
+			git init .
+			make install update-dependencies
+			git add .
+			git commit -m "initial commit"
+		fi
 		;;
 	esac
 	make check coverage integration

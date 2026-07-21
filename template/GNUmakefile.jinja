@@ -43,7 +43,7 @@ test:
 
 .PHONY: update-dependencies
 update-dependencies:
-	uv sync --upgrade
+	uv sync --all-groups --upgrade
 	prek auto-update --cooldown-days 7
 
 
