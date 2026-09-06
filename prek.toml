@@ -1,5 +1,5 @@
 #:schema https://www.schemastore.org/prek.json
-minimum_prek_version = "0.3.4"
+minimum_prek_version = "0.5.0"
 
 [[repos]]
 repo = "builtin"
@@ -16,7 +16,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/fsfe/reuse-tool"
-rev = "v6.2.0"
+rev = "a1bb792acda6fd0724936b4ebbdbc8eceb9c0459"  # frozen: v6.2.0
 hooks = [{id = "reuse-lint-file"}]
 
 [[repos]]
